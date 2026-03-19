@@ -1,0 +1,885 @@
+==================================================
+Timestamp: 2025-12-26 18:58:20
+Query ID(s): ubiquitin
+Error Type: FileNotFoundError
+Error Message: [Errno 2] No such file or directory: 'nvcc'
+--------------------------------------------------
+Traceback:Traceback (most recent call last):
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/runner.py", line 640, in predict_step
+    batch, outputs = self(batch)
+                     ~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/runners/model_runner.py", line 58, in forward
+    return self.model(batch)
+           ~~~~~~~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 626, in forward
+    si_input, si_trunk, zij_trunk = self.run_trunk(
+                                    ~~~~~~~~~~~~~~^
+        batch=batch, num_cycles=num_cycles, inplace_safe=inplace_safe
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 230, in run_trunk
+    self.template_embedder(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        batch=batch,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 451, in forward
+    t = self.template_pair_stack(
+        template_embeds,
+    ...<6 lines>...
+        _mask_trans=_mask_trans,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 349, in forward
+    tuned_chunk_size = self.chunk_size_tuner.tune_chunk_size(
+        representative_fn=blocks[0],
+    ...<2 lines>...
+        max_chunk_size=max_chunk_size,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 425, in tune_chunk_size
+    self.cached_chunk_size = self._determine_favorable_chunk_size(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        fn=representative_fn,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        max_chunk_size=max_chunk_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 379, in _determine_favorable_chunk_size
+    viable = test_chunk_size(candidates[i])
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 371, in test_chunk_size
+    fn(*args, chunk_size=chunk_size)
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 156, in forward
+    t = self.tri_att_start_end(
+        z=self.tri_mul_out_in(
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/base_blocks.py", line 367, in tri_att_start_end
+    self.tri_att_start(
+    ~~~~~~~~~~~~~~~~~~^
+        z,
+        ^^
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 145, in forward
+    x = self._chunk(
+        x,
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 89, in _chunk
+    return chunk_layer(
+        partial(
+    ...<8 lines>...
+        _out=x if inplace_safe else None,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 302, in chunk_layer
+    output_chunk = layer(**chunks)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 399, in forward
+    o = _deepspeed_evo_attn(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 555, in _deepspeed_evo_attn
+    o = DS4Sci_EvoformerAttention(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 106, in DS4Sci_EvoformerAttention
+    return EvoformerFusedAttention.apply(Q, K, V, biases[0], biases[1])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/autograd/function.py", line 581, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 71, in forward
+    o, lse = _attention(q, k, v, bias1_, bias2_)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 24, in _attention
+    kernel_ = EvoformerAttnBuilder().load()
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/op_builder/builder.py", line 542, in load
+    return self.jit_load(verbose)
+           ~~~~~~~~~~~~~^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/op_builder/builder.py", line 545, in jit_load
+    if not self.is_compatible(verbose):
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/op_builder/evoformer_attn.py", line 64, in is_compatible
+    import cutlass
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/cutlass/__init__.py", line 123, in <module>
+    from cutlass.library_defaults import OptionRegistry
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/cutlass/library_defaults.py", line 55, in <module>
+    _nvcc_version = cutlass.nvcc_version()
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/cutlass/__init__.py", line 67, in nvcc_version
+    result = subprocess.run(['nvcc', '--version'], capture_output=True)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/subprocess.py", line 1991, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'nvcc'
+
+====================================================================================================
+Timestamp: 2025-12-26 19:07:28
+Query ID(s): ubiquitin
+Error Type: FileNotFoundError
+Error Message: [Errno 2] No such file or directory: 'nvcc'
+--------------------------------------------------
+Traceback:Traceback (most recent call last):
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/runner.py", line 640, in predict_step
+    batch, outputs = self(batch)
+                     ~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/runners/model_runner.py", line 58, in forward
+    return self.model(batch)
+           ~~~~~~~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 626, in forward
+    si_input, si_trunk, zij_trunk = self.run_trunk(
+                                    ~~~~~~~~~~~~~~^
+        batch=batch, num_cycles=num_cycles, inplace_safe=inplace_safe
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 230, in run_trunk
+    self.template_embedder(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        batch=batch,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 451, in forward
+    t = self.template_pair_stack(
+        template_embeds,
+    ...<6 lines>...
+        _mask_trans=_mask_trans,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 349, in forward
+    tuned_chunk_size = self.chunk_size_tuner.tune_chunk_size(
+        representative_fn=blocks[0],
+    ...<2 lines>...
+        max_chunk_size=max_chunk_size,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 425, in tune_chunk_size
+    self.cached_chunk_size = self._determine_favorable_chunk_size(
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        fn=representative_fn,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        max_chunk_size=max_chunk_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 379, in _determine_favorable_chunk_size
+    viable = test_chunk_size(candidates[i])
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 371, in test_chunk_size
+    fn(*args, chunk_size=chunk_size)
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 156, in forward
+    t = self.tri_att_start_end(
+        z=self.tri_mul_out_in(
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/base_blocks.py", line 367, in tri_att_start_end
+    self.tri_att_start(
+    ~~~~~~~~~~~~~~~~~~^
+        z,
+        ^^
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 145, in forward
+    x = self._chunk(
+        x,
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 89, in _chunk
+    return chunk_layer(
+        partial(
+    ...<8 lines>...
+        _out=x if inplace_safe else None,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 302, in chunk_layer
+    output_chunk = layer(**chunks)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 399, in forward
+    o = _deepspeed_evo_attn(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 555, in _deepspeed_evo_attn
+    o = DS4Sci_EvoformerAttention(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 106, in DS4Sci_EvoformerAttention
+    return EvoformerFusedAttention.apply(Q, K, V, biases[0], biases[1])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/autograd/function.py", line 581, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 71, in forward
+    o, lse = _attention(q, k, v, bias1_, bias2_)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 24, in _attention
+    kernel_ = EvoformerAttnBuilder().load()
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/op_builder/builder.py", line 542, in load
+    return self.jit_load(verbose)
+           ~~~~~~~~~~~~~^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/op_builder/builder.py", line 545, in jit_load
+    if not self.is_compatible(verbose):
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/op_builder/evoformer_attn.py", line 64, in is_compatible
+    import cutlass
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/cutlass/__init__.py", line 123, in <module>
+    from cutlass.library_defaults import OptionRegistry
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/cutlass/library_defaults.py", line 55, in <module>
+    _nvcc_version = cutlass.nvcc_version()
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/cutlass/__init__.py", line 67, in nvcc_version
+    result = subprocess.run(['nvcc', '--version'], capture_output=True)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/subprocess.py", line 1991, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'nvcc'
+
+====================================================================================================
+Timestamp: 2025-12-26 20:24:04
+Query ID(s): ubiquitin
+Error Type: RuntimeError
+Error Message: Unsupported GPU and data type combination
+--------------------------------------------------
+Traceback:Traceback (most recent call last):
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/runner.py", line 640, in predict_step
+    batch, outputs = self(batch)
+                     ~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/runners/model_runner.py", line 58, in forward
+    return self.model(batch)
+           ~~~~~~~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 626, in forward
+    si_input, si_trunk, zij_trunk = self.run_trunk(
+                                    ~~~~~~~~~~~~~~^
+        batch=batch, num_cycles=num_cycles, inplace_safe=inplace_safe
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 230, in run_trunk
+    self.template_embedder(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        batch=batch,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 451, in forward
+    t = self.template_pair_stack(
+        template_embeds,
+    ...<6 lines>...
+        _mask_trans=_mask_trans,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 369, in forward
+    (t,) = checkpoint_blocks(
+           ~~~~~~~~~~~~~~~~~^
+        blocks=blocks,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        use_reentrant=self.use_reentrant,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 98, in checkpoint_blocks
+    return exec(blocks, args)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 85, in exec
+    a = wrap(block(*a))
+             ~~~~~^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 156, in forward
+    t = self.tri_att_start_end(
+        z=self.tri_mul_out_in(
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/base_blocks.py", line 367, in tri_att_start_end
+    self.tri_att_start(
+    ~~~~~~~~~~~~~~~~~~^
+        z,
+        ^^
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 145, in forward
+    x = self._chunk(
+        x,
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 89, in _chunk
+    return chunk_layer(
+        partial(
+    ...<8 lines>...
+        _out=x if inplace_safe else None,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 302, in chunk_layer
+    output_chunk = layer(**chunks)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 399, in forward
+    o = _deepspeed_evo_attn(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 555, in _deepspeed_evo_attn
+    o = DS4Sci_EvoformerAttention(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 106, in DS4Sci_EvoformerAttention
+    return EvoformerFusedAttention.apply(Q, K, V, biases[0], biases[1])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/autograd/function.py", line 581, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 71, in forward
+    o, lse = _attention(q, k, v, bias1_, bias2_)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 29, in _attention
+    kernel_.attention(Q, K, V, bias1, bias2, O, lse)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Unsupported GPU and data type combination
+
+====================================================================================================
+Timestamp: 2025-12-26 20:30:50
+Query ID(s): ubiquitin
+Error Type: RuntimeError
+Error Message: Unsupported GPU and data type combination
+--------------------------------------------------
+Traceback:Traceback (most recent call last):
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/runner.py", line 640, in predict_step
+    batch, outputs = self(batch)
+                     ~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/runners/model_runner.py", line 58, in forward
+    return self.model(batch)
+           ~~~~~~~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 626, in forward
+    si_input, si_trunk, zij_trunk = self.run_trunk(
+                                    ~~~~~~~~~~~~~~^
+        batch=batch, num_cycles=num_cycles, inplace_safe=inplace_safe
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 230, in run_trunk
+    self.template_embedder(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        batch=batch,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 451, in forward
+    t = self.template_pair_stack(
+        template_embeds,
+    ...<6 lines>...
+        _mask_trans=_mask_trans,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 369, in forward
+    (t,) = checkpoint_blocks(
+           ~~~~~~~~~~~~~~~~~^
+        blocks=blocks,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        use_reentrant=self.use_reentrant,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 98, in checkpoint_blocks
+    return exec(blocks, args)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 85, in exec
+    a = wrap(block(*a))
+             ~~~~~^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 156, in forward
+    t = self.tri_att_start_end(
+        z=self.tri_mul_out_in(
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/base_blocks.py", line 367, in tri_att_start_end
+    self.tri_att_start(
+    ~~~~~~~~~~~~~~~~~~^
+        z,
+        ^^
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 145, in forward
+    x = self._chunk(
+        x,
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 89, in _chunk
+    return chunk_layer(
+        partial(
+    ...<8 lines>...
+        _out=x if inplace_safe else None,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 302, in chunk_layer
+    output_chunk = layer(**chunks)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 399, in forward
+    o = _deepspeed_evo_attn(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 555, in _deepspeed_evo_attn
+    o = DS4Sci_EvoformerAttention(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 106, in DS4Sci_EvoformerAttention
+    return EvoformerFusedAttention.apply(Q, K, V, biases[0], biases[1])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/autograd/function.py", line 581, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 71, in forward
+    o, lse = _attention(q, k, v, bias1_, bias2_)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 29, in _attention
+    kernel_.attention(Q, K, V, bias1, bias2, O, lse)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Unsupported GPU and data type combination
+
+====================================================================================================
+Timestamp: 2025-12-29 11:42:13
+Query ID(s): ubiquitin
+Error Type: RuntimeError
+Error Message: Unsupported GPU and data type combination
+--------------------------------------------------
+Traceback:Traceback (most recent call last):
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/runner.py", line 640, in predict_step
+    batch, outputs = self(batch)
+                     ~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/runners/model_runner.py", line 58, in forward
+    return self.model(batch)
+           ~~~~~~~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 626, in forward
+    si_input, si_trunk, zij_trunk = self.run_trunk(
+                                    ~~~~~~~~~~~~~~^
+        batch=batch, num_cycles=num_cycles, inplace_safe=inplace_safe
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 230, in run_trunk
+    self.template_embedder(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        batch=batch,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 451, in forward
+    t = self.template_pair_stack(
+        template_embeds,
+    ...<6 lines>...
+        _mask_trans=_mask_trans,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 369, in forward
+    (t,) = checkpoint_blocks(
+           ~~~~~~~~~~~~~~~~~^
+        blocks=blocks,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        use_reentrant=self.use_reentrant,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 98, in checkpoint_blocks
+    return exec(blocks, args)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 85, in exec
+    a = wrap(block(*a))
+             ~~~~~^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 156, in forward
+    t = self.tri_att_start_end(
+        z=self.tri_mul_out_in(
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/base_blocks.py", line 367, in tri_att_start_end
+    self.tri_att_start(
+    ~~~~~~~~~~~~~~~~~~^
+        z,
+        ^^
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 145, in forward
+    x = self._chunk(
+        x,
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 89, in _chunk
+    return chunk_layer(
+        partial(
+    ...<8 lines>...
+        _out=x if inplace_safe else None,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 302, in chunk_layer
+    output_chunk = layer(**chunks)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 399, in forward
+    o = _deepspeed_evo_attn(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 555, in _deepspeed_evo_attn
+    o = DS4Sci_EvoformerAttention(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 106, in DS4Sci_EvoformerAttention
+    return EvoformerFusedAttention.apply(Q, K, V, biases[0], biases[1])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/autograd/function.py", line 581, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 71, in forward
+    o, lse = _attention(q, k, v, bias1_, bias2_)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 29, in _attention
+    kernel_.attention(Q, K, V, bias1, bias2, O, lse)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Unsupported GPU and data type combination
+
+====================================================================================================
+Timestamp: 2025-12-29 11:48:46
+Query ID(s): ubiquitin
+Error Type: RuntimeError
+Error Message: Unsupported GPU and data type combination
+--------------------------------------------------
+Traceback:Traceback (most recent call last):
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/runner.py", line 640, in predict_step
+    batch, outputs = self(batch)
+                     ~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/runners/model_runner.py", line 58, in forward
+    return self.model(batch)
+           ~~~~~~~~~~^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 626, in forward
+    si_input, si_trunk, zij_trunk = self.run_trunk(
+                                    ~~~~~~~~~~~~~~^
+        batch=batch, num_cycles=num_cycles, inplace_safe=inplace_safe
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/projects/of3_all_atom/model.py", line 230, in run_trunk
+    self.template_embedder(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        batch=batch,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ),
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 451, in forward
+    t = self.template_pair_stack(
+        template_embeds,
+    ...<6 lines>...
+        _mask_trans=_mask_trans,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 369, in forward
+    (t,) = checkpoint_blocks(
+           ~~~~~~~~~~~~~~~~~^
+        blocks=blocks,
+        ^^^^^^^^^^^^^^
+    ...<2 lines>...
+        use_reentrant=self.use_reentrant,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 98, in checkpoint_blocks
+    return exec(blocks, args)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/checkpointing.py", line 85, in exec
+    a = wrap(block(*a))
+             ~~~~~^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/template_module.py", line 156, in forward
+    t = self.tri_att_start_end(
+        z=self.tri_mul_out_in(
+    ...<7 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/latent/base_blocks.py", line 367, in tri_att_start_end
+    self.tri_att_start(
+    ~~~~~~~~~~~~~~~~~~^
+        z,
+        ^^
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 145, in forward
+    x = self._chunk(
+        x,
+    ...<5 lines>...
+        inplace_safe=inplace_safe,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/layers/triangular_attention.py", line 89, in _chunk
+    return chunk_layer(
+        partial(
+    ...<8 lines>...
+        _out=x if inplace_safe else None,
+    )
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/utils/chunk_utils.py", line 302, in chunk_layer
+    output_chunk = layer(**chunks)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 399, in forward
+    o = _deepspeed_evo_attn(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/openfold3/core/model/primitives/attention.py", line 555, in _deepspeed_evo_attn
+    o = DS4Sci_EvoformerAttention(q, k, v, biases)
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 106, in DS4Sci_EvoformerAttention
+    return EvoformerFusedAttention.apply(Q, K, V, biases[0], biases[1])
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/torch/autograd/function.py", line 581, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 71, in forward
+    o, lse = _attention(q, k, v, bias1_, bias2_)
+             ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/homes/55/anda/miniforge3/envs/of3-pip-Oct24-server/lib/python3.13/site-packages/deepspeed/ops/deepspeed4science/evoformer_attn.py", line 29, in _attention
+    kernel_.attention(Q, K, V, bias1, bias2, O, lse)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Unsupported GPU and data type combination
+
+==================================================

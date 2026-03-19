@@ -1,0 +1,81 @@
+{
+    "seeds": [
+        42
+    ],
+    "queries": {
+        "ubiquitin": {
+            "query_name": "ubiquitin",
+            "chains": [
+                {
+                    "molecule_type": "PROTEIN",
+                    "chain_ids": [
+                        "A"
+                    ],
+                    "sequence": "MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG",
+                    "non_canonical_residues": null,
+                    "smiles": null,
+                    "ccd_codes": null,
+                    "paired_msa_file_paths": null,
+                    "main_msa_file_paths": [
+                        "/tmp/of3_colabfold_msas/main/233b4b0b8c4616095bc3249f9375fc345d32af7deaef07117d0383c51d6f19aa.npz"
+                    ],
+                    "template_alignment_file_path": "/tmp/of3_template_data/template_cache/233b4b0b8c4616095bc3249f9375fc345d32af7deaef07117d0383c51d6f19aa.npz",
+                    "template_entry_chain_ids": [
+                        "2mbh_A",
+                        "2l3z_A",
+                        "5gvi_B",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "5kgf_M",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "2klg_A",
+                        "2jzz_A",
+                        "2klg_A",
+                        "2jzz_A",
+                        "2klg_A",
+                        "2jzz_A",
+                        "2klg_A",
+                        "2l0f_A",
+                        "2jzz_A",
+                        "2jzz_A",
+                        "2k39_A",
+                        "2jzz_A",
+                        "2k39_A",
+                        "2jzz_A",
+                        "2k39_A",
+                        "2jzz_A",
+                        "2k39_A",
+                        "2jzz_A",
+                        "2k39_A",
+                        "2jzz_A",
+                        "2jzz_A",
+                        "1xqq_A",
+                        "6tnf_C",
+                        "3zni_H",
+                        "6upu_N",
+                        "2mre_A",
+                        "5h07_A",
+                        "5b83_A",
+                        "6uyj_D",
+                        "7npo_C",
+                        "7f0n_A",
+                        "6oq2_B",
+                        "4pih_B"
+                    ],
+                    "sdf_file_path": null
+                }
+            ],
+            "use_msas": true,
+            "use_paired_msas": true,
+            "use_main_msas": true,
+            "covalent_bonds": null
+        }
+    }
+}
